@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "page_addons",
+  "version": "0.0.1",
+  "description": "",
+  "homepage_url": "https://github.com/idozahavy/page-addons",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "idozahavy@gmail.com"
+    }
+  },
+  "icons": {
+    "48": "icons/48.png"
+  },
+  "permissions": ["activeTab", "tabs"],
+  "browser_action": {
+    "default_icon": "icons/48.png",
+    "default_title": "page_addons",
+    "default_popup": "popup/main_popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["libraries/jquery.js", "libraries/back_messages.js", "page_checker.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  }
+}
