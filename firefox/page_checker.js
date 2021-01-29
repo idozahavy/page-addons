@@ -8,7 +8,7 @@ if (window.location.search.includes("select=")) {
 		ele.style = "display: block;text-align: center;font-size: 1.5em;background: blue;color: white;position: absolute;bottom: 5px;width: 100%;";
 		ele.href = `index.php?uin=${item.attributes["b_uin"].value}`;
 		ele.target = "_blank";
-		ele.onclick = "event.stopPropagation()";
+		ele.onclick = function (event) {event.stopPropagation()};
 		ele.innerText = "פתח בחלון חדש";
 		lastDiv.append(ele);
 	}
