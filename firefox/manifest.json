@@ -9,10 +9,11 @@
       "id": "idozahavy@gmail.com"
     }
   },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self';",
   "icons": {
     "48": "icons/48.png"
   },
-  "permissions": ["activeTab", "tabs"],
+  "permissions": ["activeTab", "tabs", "storage"],
   "browser_action": {
     "default_icon": "icons/48.png",
     "default_title": "page_addons",
@@ -21,10 +22,10 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["libraries/jquery.js", "libraries/back_messages.js", "page_checker.js"]
+      "js": ["libraries/jquery.js", "libraries/back_messages.js","libraries/siteAddon.js", "page_checker.js"]
     }
   ],
   "background": {
-    "scripts": ["background.js"]
+    "scripts": ["libraries/siteAddon.js","background.js"]
   }
 }

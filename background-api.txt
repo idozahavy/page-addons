@@ -1,0 +1,27 @@
+message: {
+	type: "get",
+	varName: variable name
+}
+returns: variable value
+
+
+message: {
+	type: "set",
+	varName: variable name,
+	value: value
+}
+returns: nothing
+
+
+message: {
+	type: "site",
+	locationJson: window location json, because it cannot clone the object
+}
+returns: [{inits:[string_funcs]},{inits:[string_funcs]] - list of functions
+
+
+message: {
+	type: "createSiteAddon",
+	newSiteAddon: {}
+}
+returns: nothing
